@@ -7,20 +7,6 @@ pipeline {
       }
     }
     stage('SCM Checkout') {
-      parallel {
-        stage('SCM Checkout') {
-          steps {
-            readTrusted 'https://github.com/TimeSyncTechnology/feature.git'
-          }
-        }
-        stage('') {
-          steps {
-            sleep 5
-          }
-        }
-      }
-    }
-    stage('Git') {
       steps {
         git(url: 'https://github.com/TimeSyncTechnology/feature.git', branch: 'feature')
       }
