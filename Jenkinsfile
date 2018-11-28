@@ -10,10 +10,10 @@ pipeline {
       parallel {
         stage('SCM Checkout') {
           steps {
-            readTrusted 'https://github.com/TimeSyncTechnology/feature.git'
+            git(url: 'https://github.com/TimeSyncTechnology/feature.git', branch: 'feature')
           }
         }
-        stage('') {
+        stage('error') {
           steps {
             sleep 5
           }
